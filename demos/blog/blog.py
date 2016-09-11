@@ -32,11 +32,15 @@ import unicodedata
 
 from tornado.options import define, options
 
-define("port", default=8888, help="run on the given port", type=int)
-define("mysql_host", default="127.0.0.1:3306", help="blog database host")
-define("mysql_database", default="blog", help="blog database name")
-define("mysql_user", default="blog", help="blog database user")
-define("mysql_password", default="blog", help="blog database password")
+from config import (
+    ConfigMysql, ConfigDBNames, ConfigBlog
+)
+
+define("port", default=ConfigBlog.port, help="run on the given port", type=int)
+define("mysql_host", default="%s:%s" % (ConfigMysql.host, ConfigMysql.port), help="blog database host")
+define("mysql_database", default=ConfigDBNames.ablog, help="blog database name")
+define("mysql_user", default=ConfigMysql.user_name, help="blog database user")
+define("mysql_password", default=ConfigMysql.password, help="blog database password")
 
 
 # A thread pool to be used for password hashing with bcrypt.
