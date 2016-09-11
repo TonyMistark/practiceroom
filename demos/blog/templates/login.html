@@ -6,9 +6,9 @@
 {% end %}
 
 <form action="/auth/login" method="POST">
-  Email: <input name="email" type="text"><br>
-  Password: <input name="password" type="password"><br>
+  邮箱: <input name="email" type="text"><br><br>
+  密码: <input name="password" type="password"><br><br>
   {% module xsrf_form_html() %}
-  <input type="submit">
+  <input type="submit" value="登陆">
 </form>
 {% end %}
