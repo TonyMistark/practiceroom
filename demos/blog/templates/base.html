@@ -12,6 +12,7 @@
       <div id="header">
         <div style="float:right">
           {% if current_user %}
+            <a href="/archive">Blog list</a> -
             <a href="/compose">{{ _("New post") }}</a> -
             <a href="/auth/logout?next={{ url_escape(request.uri) }}">{{ _("Sign out") }}</a>
           {% else %}

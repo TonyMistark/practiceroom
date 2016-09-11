@@ -60,7 +60,7 @@ class Application(tornado.web.Application):
             (r"/auth/logout", AuthLogoutHandler),
         ]
         settings = dict(
-            blog_title=u"Tornado Blog",
+            blog_title=u"PracticeRoom Blog",
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
             static_path=os.path.join(os.path.dirname(__file__), "static"),
             ui_modules={"Entry": EntryModule},
@@ -96,7 +96,8 @@ class BaseHandler(tornado.web.RequestHandler):
 
     def get_current_user(self):
         user_id = self.get_secure_cookie("blogdemo_user")
-        if not user_id: return None
+        if not user_id:
+            return None
         return self.db.get("SELECT * FROM authors WHERE id = %s", int(user_id))
 
     def any_author_exists(self):
