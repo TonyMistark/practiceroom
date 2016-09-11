@@ -2,7 +2,9 @@
 
 {% block body %}
   {% for entry in entries %}
+
     {% module Entry(entry) %}
+    <hr>
   {% end %}
   <div><a href="/archive">{{ _("Archive") }}</a></div>
 {% end %}
