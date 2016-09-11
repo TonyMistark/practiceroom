@@ -253,3 +253,6 @@ class ObjectHandler(BaseRequestHandler):
         os.unlink(path)
         self.set_status(204)
         self.finish()
+
+if __name__ == "__main__":
+    start(8886, "/Users/tony_mistark/projects/play_projects/practiceroom/demos/")
