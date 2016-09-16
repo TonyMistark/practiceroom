@@ -8,7 +8,7 @@ import tornado.web
 
 from tornado.options import define, options
 
-define("port", default=8886, help="run on the given port", type=int)
+define("port", default=8880, help="run on the given port", type=int)
 
 
 class MainHandler(tornado.web.RequestHandler):
@@ -24,8 +24,7 @@ class HomeHandler(tornado.web.RequestHandler):
 def main():
     tornado.options.parse_command_line()
     application = tornado.web.Application([
-        (r"/", MainHandler),
-        (r"/my_home", HomeHandler),
+        (r"/", HomeHandler),
     ])
     http_server = tornado.httpserver.HTTPServer(application)
     http_server.listen(options.port)
