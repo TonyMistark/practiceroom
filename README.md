@@ -1,3 +1,3 @@
 # practiceroom
 
-[home.practiceroom.top](http://blog.practiceroom.top:8880/)
+[home.practiceroom.top](http://home.practiceroom.top:8880/)
