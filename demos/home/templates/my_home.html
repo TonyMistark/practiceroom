@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PracticeRoom</title>
+      <style type="text/css">
+      body { font-size:18px;font-family:tahoma;}
+      div {
+      text-align:center
+      }
+  </style>
+  </head>
+  <body>
+  {% for web_site in web_sites %}
+    <br>
+    <div>
+      <a href={{ web_site[1] }}>{{ web_site[0] }}</a>
+    </div>
+
+  {% end %}
+  </body>
+</html>
