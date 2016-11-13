@@ -10,17 +10,12 @@
   </style>
   </head>
   <body>
+  {% for web_site in web_sites %}
     <br>
     <div>
-      <a href="http://blog.practiceroom.top:8882">Blog</a>
+      <a href={{ web_site[1] }}>{{ web_site[0] }}</a>
     </div>
-    <br>
-    <div>
-      <a href="http://home.practiceroom.top:8885/xadmin">DjangoX</a>
-    </div>
-    <br>
-    <div>
-      <a href="http://home.practiceroom.top:8887">Chat</a>
-    </div>
+
+  {% end %}
   </body>
 </html>

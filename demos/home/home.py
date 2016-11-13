@@ -18,7 +18,14 @@ class MainHandler(tornado.web.RequestHandler):
 class HomeHandler(tornado.web.RequestHandler):
 
     def get(self):
-        self.render("templates/my_home.html")
+        web_sites = [
+            ("PR | Blog", "http://blog.practiceroom.top:8882"),
+            ("PR | DjangoX", "http://home.practiceroom.top:8885/xadmin"),
+            ("PR | Chat", "http://home.practiceroom.top:8887"),
+            ("OsChina | michao", "https://my.oschina.net/michao"),
+            ("GitHub | michao", "https://github.com/TonyMistark")
+        ]
+        self.render(web_sites=web_sites, template_name="templates/my_home.html")
 
 
 def main():

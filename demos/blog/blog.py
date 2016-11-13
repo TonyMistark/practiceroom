@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#
+# -*- coding: utf-8 -*-
 # Copyright 2009 Facebook
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -18,6 +18,7 @@ import bcrypt
 import concurrent.futures
 import MySQLdb
 import markdown
+import markdown2
 import os.path
 import re
 import subprocess
@@ -150,7 +151,7 @@ class ComposeHandler(BaseHandler):
         id = self.get_argument("id", None)
         title = self.get_argument("title")
         text = self.get_argument("markdown")
-        html = markdown.markdown(text)
+        html = markdown2.markdown(text).encode("utf-8")
         if id:
             entry = self.db.get("SELECT * FROM entries WHERE id = %s", int(id))
             if not entry: raise tornado.web.HTTPError(404)
